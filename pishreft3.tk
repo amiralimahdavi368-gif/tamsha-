@@ -1,0 +1,4 @@
+data class ContinueItem(
+    val movie: Movie,
+    val percent: Int
+)
