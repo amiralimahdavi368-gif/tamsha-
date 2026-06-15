@@ -1,0 +1,15 @@
+private fun initPlayer(videoUrl: String) {
+
+    player = ExoPlayer.Builder(this).build()
+    playerView.player = player
+
+    val mediaItem = MediaItem.fromUri(videoUrl)
+    player.setMediaItem(mediaItem)
+
+    val pref = getSharedPreferences("watch", MODE_PRIVATE)
+    val lastPos = pref.getLong(videoUrl, 0L)
+
+    player.prepare()
+    player.seekTo(lastPos)
+    player.playWhenReady = true
+}
