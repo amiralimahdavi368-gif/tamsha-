@@ -31,3 +31,10 @@ class PlayerActivity : AppCompatActivity() {
         player.release()
     }
 }
+holder.itemView.setOnClickListener {
+    val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+    intent.putExtra("title", movie.title)
+    intent.putExtra("url", movie.url)
+    intent.putExtra("poster", movie.poster)
+    holder.itemView.context.startActivity(intent)
+}
