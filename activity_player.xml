@@ -1,14 +1,7 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.media3.ui.PlayerView
-        android:id="@+id/playerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:keepScreenOn="true"
-        android:background="#000000"
-        app:use_controller="true"
-        app:controller_show_timeout="3000" />
-
-</FrameLayout>
+holder.itemView.setOnClickListener {
+    val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+    intent.putExtra("title", movie.title)
+    intent.putExtra("url", movie.url)
+    intent.putExtra("poster", movie.poster)
+    holder.itemView.context.startActivity(intent)
+}
