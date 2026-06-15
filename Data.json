@@ -1,1 +1,49 @@
-
+{
+  "categories": [
+    {
+      "name": "اکشن",
+      "movies": [
+        {
+          "title": "John Wick",
+          "poster": "https://i.imgur.com/john.jpg",
+          "url": "https://example.com/john.m3u8"
+        },
+        {
+          "title": "Extraction",
+          "poster": "https://i.imgur.com/ex.jpg",
+          "url": "https://example.com/ex.m3u8"
+        }
+      ]
+    },
+    {
+      "name": "کودک و نوجوان",
+      "movies": [
+        {
+          "title": "Toy Story",
+          "poster": "https://i.imgur.com/toy.jpg",
+          "url": "https://example.com/toy.m3u8"
+        }
+      ]
+    },
+    {
+      "name": "کمدی",
+      "movies": [
+        {
+          "title": "Friends",
+          "poster": "https://i.imgur.com/friends.jpg",
+          "url": "https://example.com/friends.m3u8"
+        }
+      ]
+    },
+    {
+      "name": "ایرانی",
+      "movies": [
+        {
+          "title": "پایتخت",
+          "poster": "https://i.imgur.com/pay.jpg",
+          "url": "https://example.com/pay.m3u8"
+        }
+      ]
+    }
+  ]
+}
