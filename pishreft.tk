@@ -1,0 +1,13 @@
+private fun saveProgress(url: String, position: Long, duration: Long) {
+    val pref = getSharedPreferences("watch", MODE_PRIVATE)
+
+    val percent = if (duration > 0)
+        (position * 100) / duration
+    else 0
+
+    pref.edit()
+        .putLong("${url}_pos", position)
+        .putLong("${url}_dur", duration)
+        .putInt("${url}_percent", percent.toInt())
+        .apply()
+}
