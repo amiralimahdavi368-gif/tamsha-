@@ -1,0 +1,8 @@
+override fun onStop() {
+    super.onStop()
+
+    val url = intent.getStringExtra("url") ?: return
+    saveProgress(url, player.currentPosition, player.duration)
+
+    player.release()
+}
