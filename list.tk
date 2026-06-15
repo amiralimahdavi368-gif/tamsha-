@@ -1,0 +1,16 @@
+fun getContinueWatching(context: Context, movies: List<Movie>): List<ContinueItem> {
+
+    val pref = context.getSharedPreferences("watch", Context.MODE_PRIVATE)
+
+    val result = mutableListOf<ContinueItem>()
+
+    movies.forEach { movie ->
+        val percent = pref.getInt("${movie.url}_percent", 0)
+
+        if (percent in 1..95) { // نیمه دیده شده
+            result.add(ContinueItem(movie, percent))
+        }
+    }
+
+    return result
+}
