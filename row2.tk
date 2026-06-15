@@ -1,0 +1,23 @@
+repository.getData { data ->
+
+    if (data != null) {
+
+        val continueList = getContinueWatching(requireContext(), data.categories.flatMap { it.movies })
+
+        val rows = mutableListOf<Category>()
+
+        // 🔥 اول Continue Watching رو اضافه کن
+        if (continueList.isNotEmpty()) {
+            val continueCategory = Category(
+                name = "ادامه تماشا",
+                movies = continueList.map { it.movie }
+            )
+            rows.add(continueCategory)
+        }
+
+        // بقیه دسته‌ها
+        rows.addAll(data.categories)
+
+        recycler.adapter = MovieRowAdapter(rows)
+    }
+}
