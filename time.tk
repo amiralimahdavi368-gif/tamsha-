@@ -1,0 +1,6 @@
+private fun savePosition(position: Long, url: String) {
+    val pref = getSharedPreferences("watch", MODE_PRIVATE)
+    pref.edit()
+        .putLong(url, position)
+        .apply()
+}
