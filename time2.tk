@@ -1,0 +1,10 @@
+override fun onStop() {
+    super.onStop()
+
+    val currentPosition = player.currentPosition
+    val videoUrl = intent.getStringExtra("url") ?: return
+
+    savePosition(currentPosition, videoUrl)
+
+    player.release()
+}
